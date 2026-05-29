@@ -3,18 +3,21 @@ import numpy as np
 import tensorflow as tf
 
 print("cargando el modelo neuronal...")
-modelo = tf.keras.models.load_model('modelo_definitivo.keras')
+
+# comentar o descomentar según el modelo que quieras usar para la webcam
+#modelo = tf.keras.models.load_model('modelo_definitivo.keras')
+modelo = tf.keras.models.load_model('modelo_transfer_learning.keras')
 
 clases = ['celulares', 'laptops', 'relojes']
 
-cap = cv2.VideoCapture(1) # 0 es para la cámara x default, pero en mi mac me abría la de obs
+cap = cv2.VideoCapture(1) # 0 es para la cámara x default, pero en mac me abría la de obs
 
 print("cámara encendida. presiona la tecla 'q' en tu teclado para salir.")
 
 while True:
     ret, frame = cap.read()
     if not ret:
-        print("error al leer la camara.")
+        print("error al leer la cámara.")
         break
 
     # dimensiones del frame original
