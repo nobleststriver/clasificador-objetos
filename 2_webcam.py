@@ -4,7 +4,7 @@ import tensorflow as tf
 
 print("cargando el modelo neuronal...")
 
-# comentar o descomentar según el modelo que quieras usar para la webcam
+# comentar o descomentar según el modelo que se quiera usar para la webcam
 #modelo = tf.keras.models.load_model('modelo_definitivo.keras')
 modelo = tf.keras.models.load_model('modelo_transfer_learning.keras')
 
